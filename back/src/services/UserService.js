@@ -4,8 +4,12 @@ async function createUser(dadosUsuario) {
     return Usuario.create(dadosUsuario);
 }
 
-async function getProfile(id) {
-    return Usuario.findByPk(id);
+
+async function getUserByCredentials(email, senha) {
+    return await Usuario.findOne({
+        where: { email, senha },
+        attributes: ['id', 'role'], // Seleciona apenas os atributos necessários
+    });
 }
 
-module.exports = { createUser: createUser, getProfile: getProfile };
+module.exports = { createUser, getUserByCredentials };
