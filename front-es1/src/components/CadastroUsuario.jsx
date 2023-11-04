@@ -1,6 +1,6 @@
 export default function CadastroUsuario() {
     return (
-        <section className="container text-white pb-3">
+        <section className="container text-white py-3">
             <h2 className="mt-5">Cadastro de Usuários</h2>
             <form action="">
                 <div className="inputs mt-3">

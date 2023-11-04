@@ -1,9 +1,11 @@
+import { NavLink, Link } from "react-router-dom"
+
 
 export default function NavBar() {
     return (
         <nav class="navbar bg-dark border-bottom border-body fixed-top navbar-expand-lg" data-bs-theme="dark">
             <div class="container">
-                <a class="navbar-brand" href="#">Sistema</a>
+                <NavLink to={'/'} className={"navbar-brand"}>Sistema</NavLink>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -16,7 +18,7 @@ export default function NavBar() {
                             <a class="nav-link" href="#">Gestão de reservas</a>
                         </li>
                         <li class="nav-item m-auto ms-lg-4">
-                            <a class="btn btn-primary" href="#">Login</a>
+                            <Link to={'login'} className="btn btn-primary">Login</Link>
                         </li>
                     </ul>
                 </div>
