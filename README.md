@@ -86,6 +86,6 @@ Este projeto está licenciado sob a [Licença MIT](LICENSE).
 
 Pessoas que contribuíram no projeto Alocaçao de Espaços Brasil:
 
-| ![Foto do Participante 1](https://avatars.githubusercontent.com/u/88738275?v=4) ||
+| ![Foto do Participante 1](https://avatars.githubusercontent.com/u/88738275?v=4) |![Foto do Participante 2](https://avatars.githubusercontent.com/u/39502131) |
 |:--------------------------------------------------------------------------------------------------------------------------------:|:-------------------------------------------------------------------------------:|
-|                                       [Vitor Indio](https://github.com/vitorindio)                                        |
+|                                       [Vitor Indio](https://github.com/vitorindio)                                        |[Mateus Evangelista](https://github.com/matEvangelista)|
