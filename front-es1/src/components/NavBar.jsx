@@ -17,6 +17,9 @@ export default function NavBar() {
                         <li class="nav-item m-auto">
                             <a class="nav-link" href="#">Gestão de reservas</a>
                         </li>
+                        <li class="nav-item m-auto">
+                            <Link to={'cadastroSala'} className="nav-link">Cadastrar sala</Link>
+                        </li>
                         <li class="nav-item m-auto ms-lg-4">
                             <Link to={'login'} className="btn btn-primary">Login</Link>
                         </li>
