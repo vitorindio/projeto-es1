@@ -1,0 +1,92 @@
+[
+  {
+    "nome": "Sala de Reuniões A",
+    "tipo": "Reunião",
+    "recursos": ["Projetor", "Quadro branco", "Cadeiras"],
+    "localizacao": "Edifício Principal, 4º Andar",
+    "lotacao": 15,
+    "responsavel": "Ana Silva",
+    "disponivel": true
+  },
+  {
+    "nome": "Sala de Treinamento B",
+    "tipo": "Treinamento",
+    "recursos": ["Computadores", "Tela de projeção", "Mesas"],
+    "localizacao": "Edifício Secundário, 2º Andar",
+    "lotacao": 20,
+    "responsavel": "Carlos Oliveira",
+    "disponivel": true
+  },
+  {
+    "nome": "Escritório Executivo",
+    "tipo": "Escritório",
+    "recursos": ["Mesa executiva", "Sofá", "Armários"],
+    "localizacao": "Edifício Principal, 7º Andar",
+    "lotacao": 5,
+    "responsavel": "Maria Santos",
+    "disponivel": false
+  },
+  {
+    "nome": "Sala de Conferências C",
+    "tipo": "Conferência",
+    "recursos": ["Palco", "Microfones", "Assentos confortáveis"],
+    "localizacao": "Edifício Secundário, 1º Andar",
+    "lotacao": 50,
+    "responsavel": "Pedro Costa",
+    "disponivel": true
+  },
+  {
+    "nome": "Laboratório de Ciências",
+    "tipo": "Laboratório",
+    "recursos": ["Equipamentos científicos", "Bancadas", "Computadores"],
+    "localizacao": "Edifício de Ciências, 3º Andar",
+    "lotacao": 12,
+    "responsavel": "Lúcia Oliveira",
+    "disponivel": true
+  },
+  {
+    "nome": "Sala de Entrevistas D",
+    "tipo": "Entrevista",
+    "recursos": ["Cadeiras confortáveis", "Mesa de entrevista", "Iluminação adequada"],
+    "localizacao": "Edifício de Recursos Humanos, 5º Andar",
+    "lotacao": 3,
+    "responsavel": "Fernando Rocha",
+    "disponivel": true
+  },
+  {
+    "nome": "Auditório Principal",
+    "tipo": "Auditório",
+    "recursos": ["Assentos em fileiras", "Palco amplo", "Sistema de som"],
+    "localizacao": "Edifício de Eventos, 2º Andar",
+    "lotacao": 150,
+    "responsavel": "Isabel Lima",
+    "disponivel": true
+  },
+  {
+    "nome": "Sala de Estudos E",
+    "tipo": "Estudo",
+    "recursos": ["Mesas individuais", "Iluminação regulável", "Tomadas elétricas"],
+    "localizacao": "Biblioteca, 1º Andar",
+    "lotacao": 10,
+    "responsavel": "Ricardo Mendes",
+    "disponivel": true
+  },
+  {
+    "nome": "Sala de Videoconferência F",
+    "tipo": "Videoconferência",
+    "recursos": ["Equipamento de videoconferência", "Câmera", "Microfones"],
+    "localizacao": "Edifício Principal, 6º Andar",
+    "lotacao": 8,
+    "responsavel": "Mariana Oliveira",
+    "disponivel": true
+  },
+  {
+    "nome": "Sala de Exposições G",
+    "tipo": "Exposição",
+    "recursos": ["Paredes para exposição de arte", "Iluminação especial", "Área de recepção"],
+    "localizacao": "Edifício de Artes, Térreo",
+    "lotacao": 30,
+    "responsavel": "Luís Santos",
+    "disponivel": true
+  }
+]

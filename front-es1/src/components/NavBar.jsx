@@ -12,7 +12,7 @@ export default function NavBar() {
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                         <li class="nav-item m-auto">
-                            <a class="nav-link" aria-current="page" href="#">Reserva de salas</a>
+                            <Link class="nav-link" to={'reservaSalas'}>Reserva de salas</Link>
                         </li>
                         <li class="nav-item m-auto">
                             <a class="nav-link" href="#">Gestão de reservas</a>
