@@ -5,7 +5,7 @@ export default function NavBar() {
     return (
         <nav class="navbar bg-dark border-bottom border-body fixed-top navbar-expand-lg" data-bs-theme="dark">
             <div class="container">
-                <NavLink to={'/'} className={"navbar-brand"}>Sistema</NavLink>
+                <Link to={'/'} className={"navbar-brand"}>Sistema</Link>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -15,7 +15,7 @@ export default function NavBar() {
                             <Link class="nav-link" to={'reservaSalas'}>Reserva de salas</Link>
                         </li>
                         <li class="nav-item m-auto">
-                            <a class="nav-link" href="#">Gestão de reservas</a>
+                            <Link class="nav-link" to={'gestaoReservas'}>Gestão de reservas</Link>
                         </li>
                         <li class="nav-item m-auto">
                             <Link to={'cadastroSala'} className="nav-link">Cadastrar sala</Link>

@@ -7,6 +7,7 @@ import CadastroUsuario from './components/CadastroUsuario'
 import Footer from './components/Footer';
 import Login from './components/Login';
 import ReservaSala from './components/ReservaSala';
+import GestaoReservas from './components/GestaoReservas';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path='cadastroUsuario' element={<CadastroUsuario/>}/>
         <Route path='login' element={<Login/>}/>
         <Route path='reservaSalas' element={<ReservaSala/>}/>
+        <Route path='gestaoReservas' element={<GestaoReservas/>}/>
       </Routes>
       <Footer/>
     </div>

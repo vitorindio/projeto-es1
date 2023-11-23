@@ -36,8 +36,17 @@ export default function CadastroSala() {
                             <input type="text" class="form-control" id="localizacao" placeholder="Prédio tal daquele campus" />
                         </div>
                     </div>
+                    <div className="row">
+                        <div className="col-md-4 mt-4 mx-auto">
+                            <select class="form-select" aria-label="tipoReserva">
+                                <option selected>Tipo de reserva</option>
+                                <option value="automatica">Automática</option>
+                                <option value="reserva">Sob reserva</option>
+                            </select>
+                        </div>
+                    </div>
                     <div className="row mt-3">
-                        <input type="submit" value="Cadastrar" className="btn btn-primary col-md-2 col-6 m-auto"/>
+                        <input type="submit" value="Cadastrar" className="btn btn-primary col-md-2 col-6 m-auto" />
                     </div>
                 </div>
             </form>
