@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom';
-import CadastroUsuario from './CadastroUsuario';
 
 export default function Hero() {
     return (

@@ -1,6 +1,17 @@
 import data from '../assets/salas.json'
+import { useState, useEffect } from 'react';
 
 export default function ReservaSala() {
+
+    const [data, setData] = useState([]);
+
+    useEffect(() => {
+        fetch('http://localhost:5000/api/sala')
+            .then(response => response.json())
+            .then(data => setData(data))
+            .then(console.log(data))
+            .catch(error => console.error('Erro ao obter dados:', error));
+    }, []);
 
     function gerarCardSala(sala) {
         return (
@@ -8,12 +19,20 @@ export default function ReservaSala() {
                 <div className="card">
                     <div className="card-body">
                         <h4 className="card-title">{sala.nome}</h4>
-                        <p className="card-text">{' '.concat(sala.recursos)}</p>
+                        <p className="card-text">{sala.recursos}</p>
                     </div>
                     <ul className="list-group list-group-flush">
                         <li className="list-group-item">Localização: {sala.localizacao}</li>
-                        <li className="list-group-item">Tipo de reserva: <span className={`${sala.reserva_sob_autorizacao ? 'bg-warning' : 'bg-info'}`}>
-                            {sala.reserva_sob_autorizacao ? "sob autorização" : "automática"}</span></li>
+                        <li className="list-group-item">Tipo de reserva: <span className={`${sala.tipo_reserva_codigo === 1 ? 'bg-success' :
+                            sala.tipo_reserva_codigo === 2 ? 'bg-info' :
+                                sala.tipo_reserva_codigo === 3 ? 'bg-warning' :
+                                    ''
+                            }`}>
+                            {`${sala.tipo_reserva_codigo === 1 ? 'automática' :
+                                sala.tipo_reserva_codigo === 2 ? 'sob autorizacao' :
+                                    sala.tipo_reserva_codigo === 3 ? 'recorrente' :
+                                        ''
+                            }`}</span></li>
                         <li className="list-group-item">Lotação: {sala.lotacao}</li>
                         <li className={`list-group-item text-white ${sala.disponivel ? "bg-success" : "bg-danger"}`}>{sala.disponivel ? "Disponível" : "Indisponível"}</li>
                     </ul>
