@@ -3,6 +3,8 @@ const userRouter = require('./routes/userRouter');
 const expressConfig = require('./config/express');
 const sequelize = require('./config/database');
 const authenticateRouter = require('./routes/authenticateRouter');
+//dotenv
+const dotenv = require('dotenv').config();
 
 const app = express();
 
@@ -10,6 +12,7 @@ app.use(expressConfig);
 app.use(express.json()); // Isso permite que o Express entenda requisições com o corpo em JSON
 app.use(authenticateRouter)
 app.use(userRouter);
+
 
 sequelize.sync();
 
