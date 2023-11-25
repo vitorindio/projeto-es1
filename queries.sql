@@ -1,16 +1,22 @@
 -- queries para listar reservas automáticas
 create view reservas_automaticas as
-SELECT r.*, ra.sala_codigo, ra."data", u.matricula, u.nome
+SELECT r.*, ra.sala_codigo, ra."data", u.matricula, u.nome,s.nome as "nome_sala",
+s.codigo as "codigo_sala", s.tipo, s.localizacao, s.lotacao, s.recursos, s.disponivel
 from reserva r
 left join reserva_automatica ra 
 on r.codigo = ra.codigo
 join usuario u
-on ra.usuario_matricula  = u.matricula;
+on ra.usuario_matricula  = u.matricula
+join sala s 
+on ra.sala_codigo = s.codigo;
+
 
 -- queries para listar reservas recorrentes
 create view reservas_recorrentes as
 SELECT r.codigo, r.descricao, r.aberta, r.dia_semana_1, r.dia_semana_2, r.dia_semana_3,
-rr.data_inicio, rr.data_fim, d.matricula, d.siape, d2.matricula_diretor
+rr.data_inicio, rr.data_fim, d.matricula, d.siape, d2.matricula_diretor, s.nome as "nome_sala",
+s.codigo as "codigo_sala", s.tipo, s.localizacao, s.lotacao, s.recursos, s.disponivel, u.nome as nome_docente,
+u.email as email_docente, u2.nome as nome_diretor, u2.email as email_diretor
 from reserva r
 join reserva_recorrente rr 
 on r.codigo = rr.codigo
@@ -21,7 +27,9 @@ on d.matricula = rr.docente_matricula
 join usuario u 
 on u.matricula = d.matricula
 join diretor d2 
-on d2.matricula_diretor = rr.matricula_diretor;
+on d2.matricula_diretor = rr.matricula_diretor
+join usuario u2
+on d2.matricula_diretor = u2.matricula;
 
 
 -- queries para listar reservas sob autorização
