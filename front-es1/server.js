@@ -1,15 +1,3 @@
-/*import express from 'express';
-
-const app = express()
-
-app.get('/', (req, res) => {
-    console.log('oi')
-    //res.send('oioioioi')
-    res.json({message: 'Error'})
-})
-
-app.listen(5000)*/
-
 import express from 'express';
 import sqlite3 from 'sqlite3';
 import cors from 'cors';
@@ -40,10 +28,34 @@ app.get('/api/sala', (req, res) => {
   });
 });
 
-app.get('/api/reserva', (req, res) => {
+app.get('/api/reservas_automaticas', (req, res) => {
   const { tabela } = req.params;
 
-  db.all(`SELECT * FROM reserva`, (err, rows) => {
+  db.all(`SELECT * FROM reservas_automaticas`, (err, rows) => {
+    if (err) {
+      res.status(500).json({ error: err.message });
+      return;
+    }
+    res.json(rows);
+  });
+});
+
+app.get('/api/reservas_sob_autorizacao', (req, res) => {
+  const { tabela } = req.params;
+
+  db.all(`SELECT * FROM reservas_sob_autorizacao`, (err, rows) => {
+    if (err) {
+      res.status(500).json({ error: err.message });
+      return;
+    }
+    res.json(rows);
+  });
+});
+
+app.get('/api/reservas_recorrentes', (req, res) => {
+  const { tabela } = req.params;
+
+  db.all(`SELECT * FROM reservas_recorrentes`, (err, rows) => {
     if (err) {
       res.status(500).json({ error: err.message });
       return;

@@ -28,20 +28,15 @@ export default function CadastroSala() {
                             <input type="number" class="form-control" id="lotacao" placeholder="Número inteiro" min={0} />
                         </div>
                         <div class="col-md-4">
-                            <label for="responsavel" class="form-label">Responsável</label>
-                            <input type="text" class="form-control" id="responsavel" placeholder="Jobson da Silva" />
-                        </div>
-                        <div class="col-md-4">
                             <label for="localizacao" class="form-label">Localização</label>
                             <input type="text" class="form-control" id="localizacao" placeholder="Prédio tal daquele campus" />
                         </div>
-                    </div>
-                    <div className="row">
                         <div className="col-md-4 mt-4 mx-auto">
                             <select class="form-select" aria-label="tipoReserva">
                                 <option selected>Tipo de reserva</option>
-                                <option value="automatica">Automática</option>
-                                <option value="reserva">Sob reserva</option>
+                                <option value="1">Automática</option>
+                                <option value="2">Sob autorizacao</option>
+                                <option value="3">Recorrente</option>
                             </select>
                         </div>
                     </div>

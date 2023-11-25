@@ -23,7 +23,7 @@ export default function ReservaSala() {
                     </div>
                     <ul className="list-group list-group-flush">
                         <li className="list-group-item">Localização: {sala.localizacao}</li>
-                        <li className="list-group-item">Tipo de reserva: <span className={`${sala.tipo_reserva_codigo === 1 ? 'bg-success' :
+                        <li className="list-group-item">Tipo de reserva: <span className={`${sala.tipo_reserva_codigo    === 1 ? 'bg-success' :
                             sala.tipo_reserva_codigo === 2 ? 'bg-info' :
                                 sala.tipo_reserva_codigo === 3 ? 'bg-warning' :
                                     ''
@@ -34,10 +34,10 @@ export default function ReservaSala() {
                                         ''
                             }`}</span></li>
                         <li className="list-group-item">Lotação: {sala.lotacao}</li>
-                        <li className={`list-group-item text-white ${sala.disponivel ? "bg-success" : "bg-danger"}`}>{sala.disponivel ? "Disponível" : "Indisponível"}</li>
+                        <li className={`list-group-item text-white ${sala.disponivel == 1 ? "bg-success" : "bg-danger"}`}>{sala.disponivel == 1? "Disponível" : "Indisponível"}</li>
                     </ul>
                     <div className="card-body">
-                        <button href="#" className="btn btn-primary" disabled={!sala.disponivel}>Fazer reserva</button>
+                        <button href="#" className="btn btn-primary" disabled={sala.disponivel == 0}>Fazer reserva</button>
                     </div>
                 </div>
             </div>)
@@ -45,7 +45,7 @@ export default function ReservaSala() {
 
     return (
         <section className="pt-5 mt-3 container">
-            <h2 className='text-white mb-3'>Salas disponíveis</h2>
+            <h2 className='text-white mb-3'>Salas</h2>
             <div className="row g-5">
                 {data.map(gerarCardSala)}
             </div>

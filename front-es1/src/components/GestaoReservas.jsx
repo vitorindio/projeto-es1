@@ -1,6 +1,19 @@
 import data from "../assets/salas.json";
 
+import { useState, useEffect } from 'react';
+
 export default function GestaoReservas() {
+
+    const [data, setData] = useState([{}]);
+
+    useEffect(() => {
+        fetch('http://localhost:5000/api/reservas_recorrentes')
+            .then(response => response.json())
+            .then(data => setData(data))
+            .then(console.log(data))
+            .catch(error => console.error('Erro ao obter dados:', error));
+    }, []);
+
     function gerarCardSala(sala, index) {
         return (
             <div
@@ -62,23 +75,11 @@ export default function GestaoReservas() {
         );
     }
 
-    function geraCardSalaOcupada(sala) {
-        return(
-            <div className="card">
-                <div className="card-body">
-                    <div className="card-title">
-                        {sala.nome}
-                    </div>
-                </div>
-            </div>
-        )
-    }
-
     return (
         <>
             <section className="pt-5 mt-3 container">
                 <h2 className="text-white mb-3">Salas a serem aprovadas</h2>
-                <div className="row g-5">{data.map(gerarCardSala)}</div>
+                <div className="row g-5">{data[0].codigo}</div>
             </section>
             <section className="pt-5 mt-3 container">
                 <h2 className="text-white mb-3">Salas sendo utilizadas</h2>
