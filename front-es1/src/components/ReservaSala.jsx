@@ -9,7 +9,6 @@ export default function ReservaSala() {
         fetch('http://localhost:5000/api/sala')
             .then(response => response.json())
             .then(data => setData(data))
-            .then(console.log(data))
             .catch(error => console.error('Erro ao obter dados:', error));
     }, []);
 
@@ -23,7 +22,7 @@ export default function ReservaSala() {
                     </div>
                     <ul className="list-group list-group-flush">
                         <li className="list-group-item">Localização: {sala.localizacao}</li>
-                        <li className="list-group-item">Tipo de reserva: <span className={`${sala.tipo_reserva_codigo    === 1 ? 'bg-success' :
+                        <li className="list-group-item">Tipo de reserva: <span className={`${sala.tipo_reserva_codigo === 1 ? 'bg-success' :
                             sala.tipo_reserva_codigo === 2 ? 'bg-info' :
                                 sala.tipo_reserva_codigo === 3 ? 'bg-warning' :
                                     ''
