@@ -63,10 +63,7 @@ A universidade necessita de um sistema que permita o cadastro de usuários e esp
    - Execute `npm start` para iniciar o servidor.
 
 3. **Configuração do Frontend:**
-   - Navegue até a pasta do frontend.
-   - Execute `flutter pub get` para instalar as dependências.
-   - Configure a URL do backend no arquivo `lib/config.dart`.
-   - Execute `flutter run` para iniciar o aplicativo.
+
 
 4. **Acesse o Sistema:**
    - Abra o navegador e acesse `http://localhost:3000` para acessar o sistema.
