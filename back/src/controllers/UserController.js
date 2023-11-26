@@ -1,36 +1,49 @@
-const userService = require('../services/UserService');
+const { validationResult } = require('express-validator');
+const jwt = require('jsonwebtoken');
+const UserService = require("../services/UserService"); // Certifique-se de que jwt está importado
 
-async function createUser(req, res) {
-    try {
-        const novoUsuario = await userService.createUser(req.body);
-        res.json(novoUsuario);
-    } catch (error) {
-        console.error('Erro ao criar usuário:', error);
-        res.status(500).json({ mensagem: 'Erro interno do servidor' });
+class UserController {
+    constructor() {
+       this.userService = new UserService();
     }
-}
 
-async function getProfile(req, res) {
-    res.json(req.usuario); // Retorna as informações do usuário extraídas do token
-}
-
-
-async function login(req, res) {
-    const { email, senha } = req.body;
-
-    try {
-        const usuario = await userService.getUserByCredentials(email, senha);
-
-        if (!usuario) {
-            return res.status(401).json({ mensagem: 'Credenciais inválidas' });
+    async createUser(req, res) {
+        const errors = validationResult(req);
+        if (!errors.isEmpty()) {
+            return res.status(400).json({ erros: errors.array() });
         }
 
-        const token = jwt.sign({ usuario: { id: usuario.id, role: usuario.role } }, process.env.SECRET_KEY);
-        res.json({ token });
-    } catch (error) {
-        console.error('Erro ao fazer login:', error);
-        res.status(500).json({ mensagem: 'Erro interno do servidor' });
+        try {
+            const novoUsuario = await this.userService.createUser(req.body);
+            res.json(novoUsuario);
+        } catch (error) {
+            console.error('Erro ao criar usuário:', error);
+            res.status(500).json({ mensagem: 'Erro interno do servidor' });
+        }
+    }
+
+    async getProfile(req, res) {
+        res.json(req.usuario); // Retorna as informações do usuário extraídas do token
+    }
+
+    async login(req, res) {
+        const { email, senha } = req.body;
+
+        try {
+            const usuario = await this.userService.getUserByCredentials(email, senha);
+
+            if (!usuario) {
+                return res.status(401).json({ mensagem: 'Credenciais inválidas' });
+            }
+
+            const token = jwt.sign({ usuario: { id: usuario.id, role: usuario.role } }, process.env.SECRET_KEY);
+            res.json({ token });
+        } catch (error) {
+            console.error('Erro ao fazer login:', error);
+            res.status(500).json({ mensagem: 'Erro interno do servidor' });
+        }
     }
 }
 
-module.exports = { createUser, getProfile, login };
+const userController = new UserController();
+module.exports = userController;
