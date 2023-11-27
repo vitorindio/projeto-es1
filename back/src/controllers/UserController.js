@@ -4,7 +4,12 @@ const UserService = require("../services/UserService"); // Certifique-se de que 
 
 class UserController {
     constructor() {
-       this.userService = new UserService();
+        this.userService = new UserService();
+        this.register = this.register.bind(this);
+        this.getAll = this.getAll.bind(this);
+        this.getProfile = this.getProfile.bind(this);
+        this.login = this.login.bind(this);
+        this.deleteUser = this.deleteUser.bind(this);
     }
 
     async register(req, res) {
