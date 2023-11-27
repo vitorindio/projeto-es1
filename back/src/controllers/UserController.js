@@ -7,7 +7,7 @@ class UserController {
        this.userService = new UserService();
     }
 
-    async createUser(req, res) {
+    async register(req, res) {
         const errors = validationResult(req);
         if (!errors.isEmpty()) {
             return res.status(400).json({ erros: errors.array() });
@@ -18,6 +18,16 @@ class UserController {
             res.json(novoUsuario);
         } catch (error) {
             console.error('Erro ao criar usuário:', error);
+            res.status(500).json({ mensagem: 'Erro interno do servidor' });
+        }
+    }
+
+    async getAll(req, res) {
+        try {
+            const usuarios = await this.userService.getAllUsers();
+            res.json(usuarios);
+        } catch (error) {
+            console.error('Erro ao buscar usuários:', error);
             res.status(500).json({ mensagem: 'Erro interno do servidor' });
         }
     }

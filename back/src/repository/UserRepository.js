@@ -8,12 +8,27 @@ class UserRepository {
         return Usuario.create(dadosUsuario);
     }
 
+    /* TODO: rever metodo
     async getUserByCredentials(email, senha) {
-        return await Usuario.findOne({
-            where: { email, senha },
-            attributes: ['id', 'role'], // Seleciona apenas os atributos necessários
+        const usuario = await Usuario.findOne({
+            where: { email },
+            attributes: ['id', 'role', 'senha'], // Adicione 'senha' aos atributos selecionados
         });
-    }
+
+        if (!usuario) {
+            throw new Error('Usuário não encontrado');
+        }
+
+        const senhaCorreta = await bcrypt.compare(senha, usuario.senha);
+        if (!senhaCorreta) {
+            throw new Error('Senha incorreta');
+        }
+
+        // Remova a senha do objeto do usuário antes de retorná-lo
+        delete usuario.dataValues.senha;
+
+        return usuario;
+    }*/
 
     async getUserById(id) {
         return await Usuario.findByPk(id);
@@ -36,6 +51,7 @@ class UserRepository {
     }
 
     async getAllUsers() {
+        console.log(Usuario);
         return await Usuario.findAll();
     }
 }

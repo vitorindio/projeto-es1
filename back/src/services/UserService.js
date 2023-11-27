@@ -26,6 +26,7 @@ class UserService {
     }
 
     async getAllUsers() {
+        console.log('teste getAllUsers', this.userRepository.getAllUsers());
         return this.userRepository.getAllUsers();
     }
 }
