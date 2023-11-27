@@ -53,6 +53,16 @@ class UserController {
             res.status(500).json({ mensagem: 'Erro interno do servidor' });
         }
     }
+
+    async deleteUser(req, res) {
+        try {
+            await this.userService.deleteUser(req.params.matricula);
+            res.status(204).end();
+        } catch (error) {
+            console.error('Erro ao deletar usuário:', error);
+            res.status(500).json({ mensagem: 'Erro interno do servidor' });
+        }
+    }
 }
 
 const userController = new UserController();

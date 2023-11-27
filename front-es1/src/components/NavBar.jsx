@@ -23,6 +23,9 @@ export default function NavBar() {
                         <li class="nav-item m-auto ms-lg-4">
                             <Link to={'login'} className="btn btn-primary">Login</Link>
                         </li>
+                        <li class="nav-item m-auto">
+                            <Link to={'usuarios'} className="nav-link">Usuarios</Link>
+                        </li>
                     </ul>
                 </div>
             </div>
