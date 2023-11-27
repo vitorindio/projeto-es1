@@ -6,7 +6,7 @@ export default function ReservaSala() {
     const [data, setData] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/api/sala')
+        fetch('http://localhost:3001/api/sala')
             .then(response => response.json())
             .then(data => setData(data))
             .catch(error => console.error('Erro ao obter dados:', error));
