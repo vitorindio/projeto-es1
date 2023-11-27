@@ -4,7 +4,12 @@ const UserService = require("../services/UserService"); // Certifique-se de que 
 
 class UserController {
     constructor() {
-       this.userService = new UserService();
+        this.userService = new UserService();
+        this.register = this.register.bind(this);
+        this.getAll = this.getAll.bind(this);
+        this.getProfile = this.getProfile.bind(this);
+        this.login = this.login.bind(this);
+        this.deleteUser = this.deleteUser.bind(this);
     }
 
     async register(req, res) {
@@ -50,6 +55,16 @@ class UserController {
             res.json({ token });
         } catch (error) {
             console.error('Erro ao fazer login:', error);
+            res.status(500).json({ mensagem: 'Erro interno do servidor' });
+        }
+    }
+
+    async deleteUser(req, res) {
+        try {
+            await this.userService.deleteUser(req.params.matricula);
+            res.status(204).end();
+        } catch (error) {
+            console.error('Erro ao deletar usuário:', error);
             res.status(500).json({ mensagem: 'Erro interno do servidor' });
         }
     }

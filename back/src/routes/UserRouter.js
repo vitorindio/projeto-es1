@@ -12,5 +12,7 @@ router.post('/api/register', [
 
 router.get('/api/usuarios', userController.getAll.bind(userController));
 router.get('/api/perfil', auth, userController.getProfile.bind(userController));
+//delete
+router.delete('/api/usuarios/:matricula', userController.deleteUser.bind(userController));
 
 module.exports = router;
