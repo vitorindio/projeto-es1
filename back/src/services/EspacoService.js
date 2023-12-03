@@ -1,29 +1,42 @@
-const Espaco = require('../models/EspacoModel');
+// services/EspacoService.js
+const EspacoRepository = require('../repository/EspacoRepository');
 
-exports.getAllEspacos = async () => {
-    return await Espaco.findAll();
-};
-
-exports.getEspacoById = async (id) => {
-    return await Espaco.findByPk(id);
-};
-
-exports.createEspaco = async (espacoData) => {
-    return await Espaco.create(espacoData);
-};
-
-exports.updateEspaco = async (id, updatedEspacoData) => {
-    const espaco = await Espaco.findByPk(id);
-    if (!espaco) {
-        throw new Error('Espaço não encontrado');
+class EspacoService {
+    constructor() {
+        this.espacoRepository = new EspacoRepository();
     }
-    return await espaco.update(updatedEspacoData);
-};
 
-exports.deleteEspaco = async (id) => {
-    const espaco = await Espaco.findByPk(id);
-    if (!espaco) {
-        throw new Error('Espaço não encontrado');
+    async getAll() {
+        return this.espacoRepository.getAll();
     }
-    await espaco.destroy();
-};
+
+    async getById(id) {
+        return this.espacoRepository.getById(id);
+    }
+
+    async getByNome(nome) {
+        return this.espacoRepository.getByNome(nome);
+    }
+
+    async create(dados) {
+        return this.espacoRepository.create(dados);
+    }
+
+    async update(id, updatedEspacoData) {
+        return this.espacoRepository.update(id, updatedEspacoData);
+    }
+
+    async delete(id) {
+        return this.espacoRepository.delete(id);
+    }
+
+    async getAllDisponiveis() {
+        return this.espacoRepository.getAllDisponiveis();
+    }
+
+    async getByTipo(tipo) {
+        return this.espacoRepository.getByTipo(tipo);
+    }
+}
+
+module.exports = EspacoService;

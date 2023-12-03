@@ -1,49 +1,45 @@
-// models/EspacoModel.js
+// models/ReservaModel.js
 const { DataTypes } = require('sequelize');
 const sequelize = require('../config/database');
 const ReservaAutomatica = require('./ReservaAutomaticaModel');
 const ReservaSobAutorizacao = require('./ReservaSobAutorizacaoModel');
 const ReservaRecorrente = require('./ReservaRecorrenteModel');
 
-const Espaco = sequelize.define('Espaco', {
+const Reserva = sequelize.define('Reserva', {
     id: {
         type: DataTypes.INTEGER,
         primaryKey: true,
         autoIncrement: true,
         allowNull: false
     },
-    nome: {
+    descricao: {
         type: DataTypes.STRING,
         allowNull: false,
     },
-    tipo: {
-        type: DataTypes.STRING,
-        allowNull: false,
-    },
-    localizacao: {
-        type: DataTypes.STRING,
-        allowNull: false,
-    },
-    lotacao: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-    },
-    recursos: {
-        type: DataTypes.STRING,
-        allowNull: false,
-    },
-    disponivel: {
+    aberta: {
         type: DataTypes.BOOLEAN,
         allowNull: false,
     },
+    dia_semana_1: {
+        type: DataTypes.STRING,
+        allowNull: false,
+    },
+    dia_semana_2: {
+        type: DataTypes.STRING,
+    },
+    dia_semana_3: {
+        type: DataTypes.STRING,
+    },
+    tipo_reserva: {
+        type: DataTypes.STRING,
+        allowNull: false,
+    },
 }, {
-    // Other model options go here
-    tableName: 'sala', // explicitly specify table name
+    tableName: 'reserva',
 });
 
-Espaco.hasMany(ReservaAutomatica, { foreignKey: 'sala_id' });
-Espaco.hasMany(ReservaSobAutorizacao, { foreignKey: 'sala_id' });
-Espaco.hasMany(ReservaRecorrente, { foreignKey: 'sala_id' });
+Reserva.hasOne(ReservaAutomatica, { foreignKey: 'id' });
+Reserva.hasOne(ReservaSobAutorizacao, { foreignKey: 'id' });
+Reserva.hasOne(ReservaRecorrente, { foreignKey: 'id' });
 
-
-module.exports = Espaco;
+module.exports = Reserva;
