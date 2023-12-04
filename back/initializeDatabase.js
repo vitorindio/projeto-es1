@@ -5,8 +5,8 @@ const path = require('path');
 async function initializeDatabase() {
     const connection = await mysql.createConnection({
         host: process.env.DB_HOST || 'localhost',
-        user: process.env.DB_USER || 'root',
-        password: process.env.DB_PASSWORD || 'password',
+        user: process.env.DB_USER || 'vitor',
+        password: process.env.DB_PASSWORD || '1234',
         database: process.env.DB_NAME || 'dados_es1'
     });
 
@@ -16,7 +16,7 @@ async function initializeDatabase() {
         // Se a tabela 'usuario' não existir, assuma que o banco de dados precisa ser inicializado
 
         // Execute o script create-tables.sql
-        const createTablesSql = fs.readFileSync('/home/operador/IdeaProjects/projeto-es1/create-tables.sql').toString();
+        const createTablesSql = fs.readFileSync('C:\\Users\\Irmae\\workspace\\projeto-es1\\create-tables.sql').toString();
         const statements = createTablesSql.split(';');
 
         for (const statement of statements) {
@@ -26,7 +26,7 @@ async function initializeDatabase() {
         }
 
         // Execute o script insert.sql
-        const insertSql = fs.readFileSync('/home/operador/IdeaProjects/projeto-es1/queries.sql').toString();
+        const insertSql = fs.readFileSync('C:\\Users\\Irmae\\workspace\\projeto-es1\\insere.sql').toString();
         const insertStatements = insertSql.split(';');
 
         for (const statement of insertStatements) {
