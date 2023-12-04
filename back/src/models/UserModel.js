@@ -26,7 +26,7 @@ const Usuario = sequelize.define('Usuario', {
         allowNull: false,
     },
 }, {
-        tableName: 'Usuario'
+        tableName: 'usuario'
 });
 
 module.exports = Usuario;

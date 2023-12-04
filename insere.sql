@@ -43,14 +43,14 @@ LIMIT 1));*/
 insert into administrador (nome) values ('Pedro');
 
 -- insere sala
-INSERT into sala (nome, tipo, localizacao, lotacao, recursos, disponivel) values ('Anexo II', 'Sala normal', 'Prédio do CCET', 15, 'Televisão', 1);
-INSERT into sala (nome, tipo, localizacao, lotacao, recursos, disponivel) values ('Laboratório I', 'Laboratório', 'Prédio do CCET',40, 'iMacs', 1);
-INSERT into sala (nome, tipo, localizacao, lotacao, recursos, disponivel) values ('Laboratório II', 'Laboratório', 'Prédio do CCET',40, 'Computadores que funcionam :)', 0);
-INSERT INTO sala (nome, tipo, localizacao, lotacao, recursos, disponivel) VALUES ('Sala de Entrevistas', 'Entrevista', 'Edifício de Recursos Humanos, 5º Andar', 3, 'Cadeiras confortáveis, Mesa de entrevista, Iluminação adequada', 1);
-INSERT INTO sala (nome, tipo, localizacao, lotacao, recursos, disponivel) VALUES ('Sala de Estudos II', 'Estudo', 'Biblioteca, 2º Andar', 12, 'Mesas individuais, Iluminação regulável, Tomadas elétricas', 1);
-INSERT INTO sala (nome, tipo, localizacao, lotacao, recursos, disponivel) VALUES ('Sala de Palestras', 'Palestra', 'Edifício de Eventos, 1º Andar', 80, 'Palco, Projetor, Cadeiras', 0);
-INSERT INTO sala (nome, tipo, localizacao, lotacao, recursos, disponivel) VALUES ('Sala de Reuniões B', 'Reunião', 'Edifício Secundário, 3º Andar', 20, 'Projetor, Quadro branco, Cadeiras', 1);
-INSERT INTO sala (nome, tipo, localizacao, lotacao, recursos, disponivel) VALUES ('Laboratório III', 'Laboratório', 'Edifício de Ciências, 4º Andar', 15, 'Equipamentos científicos, Bancadas, Computadores', 1);
+INSERT into sala (nome, tipo, localizacao, lotacao, recursos, disponivel, descricao) values ('Anexo II', 'Sala normal', 'Prédio do CCET', 15, 'Televisão', 1, 'sala 1');
+INSERT into sala (nome, tipo, localizacao, lotacao, recursos, disponivel, descricao) values ('Laboratório I', 'Laboratório', 'Prédio do CCET',40, 'iMacs', 1, 'sala 2 ');
+INSERT into sala (nome, tipo, localizacao, lotacao, recursos, disponivel, descricao) values ('Laboratório II', 'Laboratório', 'Prédio do CCET',40, 'Computadores que funcionam :)', 0, 'sala 3');
+INSERT INTO sala (nome, tipo, localizacao, lotacao, recursos, disponivel, descricao) VALUES ('Sala de Entrevistas', 'Entrevista', 'Edifício de Recursos Humanos, 5º Andar', 3, 'Cadeiras confortáveis, Mesa de entrevista, Iluminação adequada', 1, 'sala 4');
+INSERT INTO sala (nome, tipo, localizacao, lotacao, recursos, disponivel, descricao) VALUES ('Sala de Estudos II', 'Estudo', 'Biblioteca, 2º Andar', 12, 'Mesas individuais, Iluminação regulável, Tomadas elétricas', 1, 'sala 5');
+INSERT INTO sala (nome, tipo, localizacao, lotacao, recursos, disponivel, descricao) VALUES ('Sala de Palestras', 'Palestra', 'Edifício de Eventos, 1º Andar', 80, 'Palco, Projetor, Cadeiras', 0, 'sala 6');
+INSERT INTO sala (nome, tipo, localizacao, lotacao, recursos, disponivel, descricao) VALUES ('Sala de Reuniões B', 'Reunião', 'Edifício Secundário, 3º Andar', 20, 'Projetor, Quadro branco, Cadeiras', 1, 'sala 7');
+INSERT INTO sala (nome, tipo, localizacao, lotacao, recursos, disponivel, descricao) VALUES ('Laboratório III', 'Laboratório', 'Edifício de Ciências, 4º Andar', 15, 'Equipamentos científicos, Bancadas, Computadores', 1, 'sala 8');
 
 
 -- insere reserva automática

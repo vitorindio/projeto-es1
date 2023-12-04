@@ -26,7 +26,7 @@ class EspacoRepository {
         try {
             const espaco = await EspacoModel.findByPk(id);
             if (!espaco) {
-                throw new Error('Espaço não encontrado');
+                console.log('Espaço não encontrado');
             }
             await espaco.destroy();
         } catch (err) {

@@ -5,7 +5,7 @@
   "main": "src/app.js",
   "scripts": {
     "start": "node src/app.js",
-    "dev": "concurrently \"npm run start\" \"cd ../front-es1 && npm run dev\"",
+    "dev": "node initializeDatabase.js && concurrently \"npm run start\" \"cd ../front-es1 && npm run dev\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],

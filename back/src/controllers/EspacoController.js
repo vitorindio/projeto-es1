@@ -33,11 +33,13 @@ class EspacoController {
     }
 
     async createEspaco(req, res) {
+        console.log(req.body)
         const espacoData = req.body;
         try {
-            const novoEspaco = await espacoService.create(espacoData);
+            const novoEspaco = await this.espacoService.create(espacoData);
             res.json(novoEspaco);
         } catch (error) {
+            console.log(error)
             res.status(500).json({error: error.message});
         }
     };
@@ -46,7 +48,7 @@ class EspacoController {
         const {id} = req.params;
         const updatedEspacoData = req.body;
         try {
-            const espacoAtualizado = await espacoService.update(id, updatedEspacoData);
+            const espacoAtualizado = await this.espacoService.update(id, updatedEspacoData);
             res.json(espacoAtualizado);
         } catch (error) {
             res.status(500).json({error: error.message});
@@ -56,7 +58,7 @@ class EspacoController {
     async delete(req, res) {
         const {id} = req.params;
         try {
-            await espacoService.delete(id);
+            await this.espacoService.delete(id);
             res.json({message: 'Espaço deletado com sucesso'});
         } catch (error) {
             res.status(500).json({error: error.message});

@@ -1,5 +1,6 @@
 // services/EspacoService.js
 const EspacoRepository = require('../repository/EspacoRepository');
+const EspacoModel = require("../models/EspacoModel");
 
 class EspacoService {
     constructor() {
