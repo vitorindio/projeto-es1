@@ -20,6 +20,7 @@ export default function ListaUsuarios() {
     }, []);
 
     const handleDelete = (matricula) => {
+        console.log('Deletando da lista de usuários...')
         axios.delete(`http://localhost:3001/api/usuarios/${matricula}`)
             .then(response => {
                 console.log(response.data);

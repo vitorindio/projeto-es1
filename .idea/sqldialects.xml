@@ -4,5 +4,6 @@
     <file url="file://$PROJECT_DIR$/create-tables.sql" dialect="MySQL" />
     <file url="file://$PROJECT_DIR$/dados" dialect="MySQL" />
     <file url="file://$PROJECT_DIR$/insere.sql" dialect="SQLite" />
+    <file url="file://$PROJECT_DIR$/queries.sql" dialect="MySQL" />
   </component>
 </project>

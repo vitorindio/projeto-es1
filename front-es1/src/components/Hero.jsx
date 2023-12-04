@@ -9,6 +9,7 @@ export default function Hero() {
                 <p> </p>
                 <Link to='/login' className='btn btn-primary'>Login</Link>
                 <Link to='/cadastroUsuario' className='btn btn-success' style={{marginLeft:5}}>Cadastre-se</Link>
+                <Link to={'/salas'} className='btn btn-primary' style={{marginLeft:5}}>Salas</Link>
             </div>
         </section>
     )
