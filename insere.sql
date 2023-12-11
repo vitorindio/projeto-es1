@@ -1,16 +1,16 @@
 -- insere discente
-insert into usuario (matricula, nome, email, telefone, senha) values ('202311250001', 'Mateus Alcântara', 'mateus.alcantara@gmail.com', '21999999999', '123456');
+insert into usuario (matricula, nome, email, telefone, tipo ,senha) values ('202311250001', 'Mateus Alcântara', 'mateus.alcantara@gmail.com', '21999999999', 'discente', '123456');
 INSERT INTO discente (matricula_discente) VALUES ('202311250001');
 
 -- insere docente
-insert into usuario (matricula, nome, email, telefone, senha) values ('202311250002', 'Jobson', 'jobson@gmail.com', '21999999999', '123456');
+insert into usuario (matricula, nome, email, telefone, tipo, senha) values ('202311250002', 'Jobson', 'jobson@gmail.com', '21999999999', 'docente', '123456');
 insert into docente (matricula_docente, siape) values ('202311250002', '202311250002');
 
 -- insere diretor
-insert into usuario(matricula, nome, email, telefone, senha) values ('202311250003','Andreatta', 'andreatta@gmail.com', '21999999999', '123456');
+insert into usuario(matricula, nome, email, telefone, tipo, senha) values ('202311250003','Andreatta', 'andreatta@gmail.com', '21999999999', 'diretor', '123456');
 INSERT into diretor (matricula_diretor) values ('202311250003');
 
--- insere admin
+-- insere adminnome
 insert into administrador (nome) values ('Pedro');
 
 -- insere sala
